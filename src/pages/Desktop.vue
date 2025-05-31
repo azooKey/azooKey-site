@@ -58,7 +58,7 @@ import MiniHeader from '../components/MiniHeader.vue'
 const title = 'macOS版 | azooKey - 自由自在なキーボードアプリ'
 const description =
   'iOS向けキーボードアプリ「azooKey」のmacOS版は、ニューラルかな漢字変換エンジンを搭載した本格派日本語入力です。'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 
 useHead({ title: 'macOS版 |' })
 

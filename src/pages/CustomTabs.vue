@@ -63,7 +63,7 @@ import PageArticle from '../components/PageArticle.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'カスタムタブ機能'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 const title = 'カスタムタブ | azooKey - 自由自在なキーボードアプリ'
 
 useHead({
@@ -103,13 +103,13 @@ const customtabfiles = ref([
   {
     title: 'GODAN',
     description: 'GODAN配列がazooKeyでも使えるようになるテンキースタイルのカスタムタブです。',
-    link: 'https://azookey.netlify.app/static/custard/godan.json',
+    link: 'https://azookey.com/static/custard/godan.json',
     image: '/static/assets/custard_godan.jpg'
   },
   {
     title: 'ヒエログリフ',
     description: 'ヒエログリフを簡単に入力できるスクロール式のカスタムタブです。',
-    link: 'https://azookey.netlify.app/static/custard/hieroglyphs.json',
+    link: 'https://azookey.com/static/custard/hieroglyphs.json',
     image: '/static/assets/custard_hieroglyphs.jpg'
   }
   // 追加のカスタムタブファイル情報をここに追加します
@@ -129,31 +129,31 @@ const user_made_customtabfiles = ref([
     files: [
       {
         title: 'iPad用かな五十音順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPad_kana_fifty.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPad_kana_fifty.json'
       },
       {
         title: 'iPad用英数小文字アルファベット順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPad_english_lower.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPad_english_lower.json'
       },
       {
         title: 'iPad用英数大文字アルファベット順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPad_english_upper.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPad_english_upper.json'
       },
       {
         title: 'iPhone用かな五十音順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPhone_kana_fifty.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPhone_kana_fifty.json'
       },
       {
         title: 'iPhone用英数小文字アルファベット順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPhone_english_lower.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPhone_english_lower.json'
       },
       {
         title: 'iPhone用英数大文字アルファベット順キーボード',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPhone_english_upper.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPhone_english_upper.json'
       },
       {
         title: 'iPhone用数字テンキー',
-        link: 'https://azookey.netlify.app/static/mori_project_custard/iPhone_number_tenkey.json'
+        link: 'https://azookey.com/static/mori_project_custard/iPhone_number_tenkey.json'
       }
     ]
   }

@@ -50,7 +50,7 @@ import { useHead, useSeoMeta } from '@unhead/vue'
 const title = 'azooKey - 自由自在なキーボードアプリ'
 const description =
   'azooKeyは強力なカスタマイズ機能を搭載した日本語入力キーボードです。普段使う日本語タブをカスタマイズするカスタムキー機能とオリジナルの配列のキーボードを作るカスタムタブ機能でどこまでも自由にカスタマイズができます。ライブ変換、着せ替え、ユーザ辞書など、快適な入力のための機能もしっかりサポートしています。'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 
 useHead({
   title: 'azooKey - 自由自在なキーボードアプリ',

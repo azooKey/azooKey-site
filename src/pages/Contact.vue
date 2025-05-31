@@ -30,7 +30,7 @@ import MiniHeader from '../components/MiniHeader.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'azooKeyに関するお問い合わせをお寄せください。'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 const title = 'お問い合わせ | azooKey - 自由自在なキーボードアプリ'
 
 useHead({

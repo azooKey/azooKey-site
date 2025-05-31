@@ -131,7 +131,7 @@ import MiniHeader from '../components/MiniHeader.vue'
 
 const description =
   'iOS・iPadOS対応のキーボードアプリazooKeyはGitHubでオープンソースで開発・公開しています'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 const title = 'オープンソース | azooKey - 自由自在なキーボードアプリ'
 
 useHead({
