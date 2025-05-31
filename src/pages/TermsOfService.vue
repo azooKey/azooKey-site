@@ -1,8 +1,9 @@
 <template>
   <div>
-    <PageHeader>
+    <div ref="hero" class="hero-header">
       <ArticleHeader1>利用規約</ArticleHeader1>
-    </PageHeader>
+    </div>
+    <MiniHeader :visible="true" />
     <PageArticle>
       <h2>1.本規約について</h2>
       <h3>1.1.適用</h3>
@@ -79,7 +80,7 @@ import { defineComponent } from 'vue'
 
 import TheFooter from '../components/TheFooter.vue'
 import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import PageHeader from '../components/PageHeader.vue'
+import MiniHeader from '../components/MiniHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
@@ -109,8 +110,8 @@ export default defineComponent({
   components: {
     TheFooter,
     ArticleHeader1,
-    PageHeader,
-    PageArticle
+    PageArticle,
+    MiniHeader
   }
 })
 </script>
@@ -131,5 +132,9 @@ li {
 }
 a {
   color: #42b983;
+}
+/* Prevent MiniHeader from overlapping content */
+.hero-header {
+  margin-top: 80px; /* equal to MiniHeader height */
 }
 </style>

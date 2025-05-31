@@ -1,8 +1,9 @@
 <template>
   <div>
-    <PageHeader>
+    <div ref="hero" class="hero-header">
       <ArticleHeader1>お問い合わせ</ArticleHeader1>
-    </PageHeader>
+    </div>
+    <MiniHeader :visible="true" />
     <PageArticle>
       <p>以下よりお問い合わせの種類を選び、フォームへのご記入をお願いいたします。</p>
       <p>「質問・連絡・その他」をお選びいただく場合、返信可能なメールアドレスをご用意ください。</p>
@@ -24,8 +25,8 @@ import { defineComponent } from 'vue'
 import TheFooter from '../components/TheFooter.vue'
 import ArticleHeader1 from '../components/ArticleHeader1.vue'
 import ArticleHeaderLogo from '../components/ArticleHeaderLogo.vue'
-import PageHeader from '../components/PageHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
+import MiniHeader from '../components/MiniHeader.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'azooKeyに関するお問い合わせをお寄せください。'
@@ -57,8 +58,8 @@ export default defineComponent({
     ArticleHeader1,
     // eslint-disable-next-line vue/no-unused-components
     ArticleHeaderLogo,
-    PageHeader,
-    PageArticle
+    PageArticle,
+    MiniHeader
   },
 
   data() {
@@ -104,5 +105,9 @@ h2 {
 }
 a {
   color: #635959;
+}
+/* Prevent MiniHeader from overlapping content */
+.hero-header {
+  margin-top: 80px; /* equal to MiniHeader height */
 }
 </style>

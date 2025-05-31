@@ -1,13 +1,6 @@
 <template>
   <div>
-    <PageHeader>
-      <div class="features">
-        <img src="/static/assets/s0.png" class="screenshot" />
-        <img src="/static/assets/s1.png" class="screenshot" />
-        <img src="/static/assets/s2.png" class="screenshot" />
-        <img src="/static/assets/s3.png" class="screenshot" />
-      </div>
-
+    <PageHeader ref="hero" class="hero-header">
       <!-- App Icon and Typo -->
       <div class="icon-container">
         <img src="/static/assets/azooKeyLogo.png" class="icon" />
@@ -20,12 +13,15 @@
       </h1>
       <AppStoreLink></AppStoreLink>
     </PageHeader>
-
+    <div :style="{ height: heroHeight + 'px' }"></div>
+    <MiniHeader :visible="miniVisible" />
     <!-- Article Section with Introductions -->
     <PageArticle>
-      <div v-for="item in introductions" :key="item.header">
-        <h3>{{ item.header }}</h3>
-        <p v-html="item.contents"></p>
+      <div class="intro-grid">
+        <div v-for="item in introductions" :key="item.header" class="intro-card">
+          <h3>{{ item.header }}</h3>
+          <p v-html="item.contents"></p>
+        </div>
       </div>
     </PageArticle>
 
@@ -41,6 +37,7 @@ import TheFooter from '../components/TheFooter.vue'
 import AppStoreLink from '../components/AppStoreLink.vue'
 import PageHeader from '../components/PageHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
+import MiniHeader from '../components/MiniHeader.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const title = 'azooKey - 自由自在なキーボードアプリ'
@@ -73,11 +70,16 @@ export default defineComponent({
     TheFooter,
     AppStoreLink,
     PageHeader,
-    PageArticle
+    PageArticle,
+    MiniHeader
   },
 
   data() {
     return {
+      isScrolled: false,
+      miniVisible: false,
+      drawerOpen: false,
+      heroHeight: 0,
       // phone: phone,
       introductions: [
         {
@@ -125,17 +127,26 @@ export default defineComponent({
             'キーの振動フィードバック、クリップボードの履歴機能、ペーストボタンなど、フルアクセスを有効にすることでより便利な機能を利用することができます。もちろん、フルアクセスがオフでも全く問題なくご利用いただけます。'
         },
         {
-          header: '便利な機能',
+          header: '入力スタイルの柔軟性',
           contents: `<ul>
-      <li>ローマ字入力でもフリック入力でも「大文字に固定」機能を搭載しています。</li>
-      <li>「英語はローマ字で日本語はフリック」のような設定にもしっかり対応しています。</li>
-      <li>キーや変換候補の文字サイズは自由に設定できます。</li>
-      <li>片手モードに対応しています。縦持ちと横持ち、ローマ字入力とフリック入力でそれぞれ設定できるので、細かいカスタマイズが可能です。</li>
-      <li>絵文字と顔文字の変換はそれぞれ自由にON/OFF可能です。</li>
-      <li>全角数字「１２３」や上付き文字・下付き文字の「¹²³₄₅₆」にも変換できます。数式や化学式も簡単に書けます。</li>
-      <li>半角カナ「ｱｲｳ」や濁点付き仮名「あ゙」も変換できます。</li>
-      </ul>
-`
+            <li>ローマ字入力でもフリック入力でも「大文字に固定」機能を搭載しています。</li>
+            <li>「英語はローマ字で日本語はフリック」のような設定にもしっかり対応しています。</li>
+          </ul>`
+        },
+        {
+          header: '多彩なカスタマイズ',
+          contents: `<ul>
+            <li>キーや変換候補の文字サイズは自由に設定できます。</li>
+            <li>片手モードに対応しています。縦持ちと横持ち、ローマ字入力とフリック入力でそれぞれ設定できるので、細かいカスタマイズが可能です。</li>
+          </ul>`
+        },
+        {
+          header: '豊富な文字変換',
+          contents: `<ul>
+            <li>絵文字と顔文字の変換はそれぞれ自由にON/OFF可能です。</li>
+            <li>全角数字「１２３」や上付き文字・下付き文字の「¹²³₄₅₆」にも変換できます。数式や化学式も簡単に書けます。</li>
+            <li>半角カナ「ｱｲｳ」や濁点付き仮名「あ゙」も変換できます。</li>
+          </ul>`
         },
         {
           header: '使い方',
@@ -166,35 +177,66 @@ export default defineComponent({
         }
       ]
     }
-  }
+  },
+
+  methods: {
+    handleScroll() {
+      const y =
+        window.pageYOffset ||
+        document.documentElement.scrollTop ||
+        document.body.scrollTop ||
+        0
+      const heroH = this.heroHeight || 38  // fallback if 0
+      const showAt = heroH                  // show mini when past hero bottom
+      const hideAt = heroH * 0.5            // hide when back above half
+      if (!this.miniVisible && y > showAt) this.miniVisible = true
+      else if (this.miniVisible && y < hideAt) this.miniVisible = false
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      const raw = this.$refs.hero as any
+      // If ref points to a component instance, use its $el; otherwise raw is an HTMLElement
+      const el = raw?.$el ? (raw.$el as HTMLElement) : (raw as HTMLElement)
+      this.heroHeight = el?.offsetHeight ?? 0
+      window.addEventListener('scroll', this.handleScroll, { passive: true })
+    })
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+
 })
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.VueCarousel {
-  position: relative;
-  width: 100%;
-  height: 48.4vw;
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #42b983;
+  --font-sans: 'Inter', 'Noto Sans JP', sans-serif;
 }
-.VueCarousel-wrapper,
-.VueCarousel-inner,
-.VueCarousel-slide {
-  height: 100% !important;
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  color: #222;
 }
-.VueCarousel-slide .slider-inner {
-  height: 100%;
-}
+
 .typo {
   max-width: 500px;
   min-width: 300px;
   width: 44%;
 }
+
 .icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: visible;
 }
 
 .typo-container {
@@ -203,8 +245,9 @@ export default defineComponent({
   align-items: center;
   flex-direction: column;
 }
+
 .icon {
-  margin-top: -5.2vw;
+  margin-top: 0;
   margin-bottom: 20px;
   max-width: 120px;
   width: 15%;
@@ -218,37 +261,82 @@ export default defineComponent({
     0 19.2px 19.8px rgba(0, 0, 0, 0.092),
     0 38.4px 34.8px rgba(0, 0, 0, 0.1);
 }
+
 .screenshot {
   width: 24vw;
   height: 26.4vw;
   object-fit: cover;
   object-position: 0 100%;
 }
+
 .features {
   display: flex;
   justify-content: center;
   align-items: stretch;
   text-align: center;
+  gap: 1.5vw;
 }
+
 h1 {
-  margin: 8px;
+  margin: 24px 0 16px;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
+
 h3 {
   margin-bottom: -5px;
 }
+
 .text {
   display: inline-block;
 }
+
 ul {
   text-align: left;
   padding: 10px;
 }
+
 li {
   margin: 0 10px;
 }
+
 a {
   color: #42b983;
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.intro-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 6px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.intro-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.06),
+    0 12px 20px rgba(0, 0, 0, 0.12);
+}
+
+.screenshot {
+  border-radius: 8px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.04),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.hero-header {
+  position: relative !important;   /* cancel sticky/fixed */
+  top: auto !important;
 }
 </style>

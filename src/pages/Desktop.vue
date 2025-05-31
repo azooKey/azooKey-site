@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader>
+    <div ref="hero" class="hero-header">
       <ArticleHeader1>
         <span class="text">macOS版</span> <span class="text">azooKey</span>
       </ArticleHeader1>
@@ -18,7 +18,8 @@
        </div>
           
     </p>
-    </PageHeader>
+    </div>
+    <MiniHeader :visible="true" />
 
     <!-- Article Section with Introductions -->
     <PageArticle>
@@ -48,47 +49,38 @@
 import { defineComponent } from 'vue'
 
 import TheFooter from '../components/TheFooter.vue'
-import AppStoreLink from '../components/AppStoreLink.vue'
 import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import PageHeader from '../components/PageHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import GitHubButton from 'vue-github-button'
+import MiniHeader from '../components/MiniHeader.vue'
 
 const title = 'macOS版 | azooKey - 自由自在なキーボードアプリ'
 const description =
   'iOS向けキーボードアプリ「azooKey」のmacOS版は、ニューラルかな漢字変換エンジンを搭載した本格派日本語入力です。'
 const image = 'https://azookey.netlify.app/static/og-image.png'
 
-useHead({
-  title: 'macOS版 |'
-})
+useHead({ title: 'macOS版 |' })
 
 useSeoMeta({
   ogTitle: () => title,
   twitterTitle: () => title,
-
   description: () => description,
   ogDescription: () => description,
   twitterDescription: () => description,
-
   ogImage: () => image,
   twitterImage: () => image
 })
 
 export default defineComponent({
-  // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
-  name: 'Main',
-
+  name: 'DesktopPage',
   components: {
     TheFooter,
-    AppStoreLink,
-    PageHeader,
     PageArticle,
     ArticleHeader1,
-    GitHubButton
+    GitHubButton,
+    MiniHeader
   },
-
   data() {
     return {}
   }
@@ -127,5 +119,9 @@ header {
 footer {
   background-color: #ddccdd;
   padding-bottom: 15px;
+}
+/* Prevent MiniHeader from overlapping content */
+.hero-header {
+  margin-top: 80px; /* equal to MiniHeader height */
 }
 </style>
