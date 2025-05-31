@@ -1,10 +1,11 @@
 <template>
   <div>
-    <PageHeader>
+    <div ref="hero" class="hero-header">
       <ArticleHeader1>
         <span class="text">オープン</span><span class="text">ソース</span>
       </ArticleHeader1>
-    </PageHeader>
+    </div>
+    <MiniHeader :visible="true" />
 
     <PageArticle>
       <p>azooKeyや関連ソフトウェアをオープンソースで公開しています。</p>
@@ -121,12 +122,12 @@
 
 <script lang="ts">
 import TheFooter from '../components/TheFooter.vue'
-import PageHeader from '../components/PageHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
 import ArticleHeader1 from '../components/ArticleHeader1.vue'
 import { defineComponent } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import GitHubButton from 'vue-github-button'
+import MiniHeader from '../components/MiniHeader.vue'
 
 const description =
   'iOS・iPadOS対応のキーボードアプリazooKeyはGitHubでオープンソースで開発・公開しています'
@@ -151,13 +152,12 @@ useSeoMeta({
 
 export default defineComponent({
   name: 'OpenSource',
-
   components: {
     TheFooter,
     ArticleHeader1,
-    PageHeader,
     PageArticle,
-    GitHubButton
+    GitHubButton,
+    MiniHeader
   }
 })
 </script>
@@ -217,5 +217,9 @@ h2 {
 }
 .text {
   display: inline-block;
+}
+/* Prevent MiniHeader from overlapping content */
+.hero-header {
+  margin-top: 80px; /* equal to MiniHeader height */
 }
 </style>

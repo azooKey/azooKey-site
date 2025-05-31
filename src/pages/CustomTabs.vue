@@ -1,9 +1,10 @@
 <template>
   <div>
-    <PageHeader>
+    <div ref="hero" class="hero-header">
       <img src="/static/assets/customtabs_header0.png" class="header_img" />
       <h1><span class="text">カスタム</span><span class="text">タブ</span></h1>
-    </PageHeader>
+    </div>
+    <MiniHeader :visible="true" />
 
     <PageArticle>
       <h2>カスタムタブ機能について</h2>
@@ -57,7 +58,7 @@
 import { ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
 import TheFooter from '../components/TheFooter.vue'
-import PageHeader from '../components/PageHeader.vue'
+import MiniHeader from '../components/MiniHeader.vue'
 import PageArticle from '../components/PageArticle.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
@@ -169,6 +170,8 @@ const copyToClipboard = async (link: string) => {
     alert('コピーに失敗しました。')
   }
 }
+// If using defineComponent for options API, register MiniHeader in components.
+// Not needed for <script setup>, but left as comment for clarity.
 </script>
 
 <style scoped>
@@ -241,5 +244,9 @@ blockquote {
   margin-top: 0px;
   margin-bottom: 0px;
   color: #666666;
+}
+/* Prevent MiniHeader from overlapping content */
+.hero-header {
+  margin-top: 80px; /* equal to MiniHeader height */
 }
 </style>
