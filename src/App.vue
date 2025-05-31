@@ -33,6 +33,6 @@ body {
 }
 
 footer {
-  background-color: #d5bab8;
+  background-color: #eceff5;
 }
 </style>

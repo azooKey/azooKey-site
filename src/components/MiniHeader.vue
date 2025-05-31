@@ -56,7 +56,7 @@ const drawerOpen = ref(false)
   left: 0;
   right: 0;
   height: 80px;
-  background-color: #d5bab8;
+  background-color: #eceff5;
   display: flex;
   align-items: center;
   justify-content: center;

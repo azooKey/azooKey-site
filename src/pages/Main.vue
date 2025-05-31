@@ -13,13 +13,20 @@
       </h1>
       <AppStoreLink></AppStoreLink>
     </PageHeader>
-    <div :style="{ height: heroHeight + 'px' }"></div>
     <MiniHeader :visible="miniVisible" />
     <!-- Article Section with Introductions -->
     <PageArticle>
       <div class="intro-grid">
         <div v-for="item in introductions" :key="item.header" class="intro-card">
+          <!-- Optional image -->
           <h3>{{ item.header }}</h3>
+          <img
+            v-if="item.img"
+            :src="item.img"
+            class="intro-img"
+            :alt="item.header"
+            loading="lazy"
+          />
           <p v-html="item.contents"></p>
         </div>
       </div>
@@ -85,63 +92,63 @@ export default defineComponent({
         {
           header: 'カスタムキー',
           contents:
-            'azooKeyはカスタムキー機能を搭載する全く新しいキーボードです。お気に入りの絵文字や毎日使う記号を登録して、入力をもっと楽しくしましょう！'
+            'azooKeyはカスタムキー機能を搭載する全く新しいキーボードです。お気に入りの絵文字や毎日使う記号を登録して、入力をもっと楽しくしましょう！',
+            img: '/static/assets/custom_key_sample.jpeg'
         },
         {
           header: '「ライブ変換」機能を搭載',
           contents:
-            'macOSで人気の「ライブ変換」がiOSでも使えます。打った側から自動で変換してくれるので、快適に文章を書くことができます！'
+            'macOSで人気の「ライブ変換」がiOSでも使えます。打った側から自動で変換してくれるので、快適に文章を書くことができます！',
+          img: '/static/assets/sample_live_conversion.gif'
         },
         {
           header: 'キーボードの着せ替え',
           contents:
-            'azooKeyはキーボードの着せ替えに対応しています。簡単な設定でパートナーや推しの写真を背景に設定できます。あなただけの特別なキーボードを作りましょう！'
+            'azooKeyはキーボードの着せ替えに対応しています。簡単な設定でパートナーや推しの写真を背景に設定できます。あなただけの特別なキーボードを作りましょう！',
+          img: '/static/assets/sample_custom_theme.jpeg'
         },
         {
           header: 'カスタムタブ',
-          contents: `カスタマイズできるのはキーだけではありません。azooKeyではオリジナルの配列のキーボードを作成し、日本語入力と一緒に簡単に使うことができます。日本語入力とキーボードの拡張性を両立するazooKeyだけの機能です！詳しくは<router-link to="/CustomTabs">「カスタムタブについて」</router-link>をご覧ください！`
+          contents: `カスタマイズできるのはキーだけではありません。azooKeyではオリジナルの配列のキーボードを作成し、日本語入力と一緒に簡単に使うことができます。日本語入力とキーボードの拡張性を両立するazooKeyだけの機能です！詳しくは <a href="/CustomTabs">「カスタムタブについて」</a> をご覧ください！`,
+          img: '/static/assets/sample_custom_tab.jpeg'
         },
         {
           header: '候補の拡大表示',
           contents:
-            'azooKeyは入力中に漢字を拡大表示出来るので、一瞬で字の構造が分かります。難しい漢字を手書きするため画像検索する必要はもうありません。'
+            'azooKeyは入力中に漢字を拡大表示出来るので、一瞬で字の構造が分かります。難しい漢字を手書きするため画像検索する必要はもうありません。',
+            img: '/static/assets/sample_candidate_enlarge.jpeg'
         },
         {
           header: 'おしゃれなフォント',
           contents:
-            'おしゃれフォントでの入力も対応。かわいい英数字が簡単に入力できます。チャットもプロフィールもハッシュタグも綺麗なフォントで彩りましょう！'
+            'おしゃれフォントでの入力も対応。かわいい英数字が簡単に入力できます。チャットもプロフィールもハッシュタグも綺麗なフォントで彩りましょう！',
+            img: '/static/assets/sample_typography_input.jpeg'
         },
         {
           header: 'ユーザ辞書機能',
           contents:
-            '高機能なユーザ辞書機能を搭載。固有名詞など好きな単語を登録できるほか、日付の入力やランダムな変換も設定可能です。端末のユーザ辞書とも連携します。'
+            '高機能なユーザ辞書機能を搭載。固有名詞など好きな単語を登録できるほか、日付の入力やランダムな変換も設定可能です。端末のユーザ辞書とも連携します。',
+          img: '/static/assets/sample_user_dictionary.jpeg'
         },
         {
           header: '操作も簡単',
           contents:
-            'フリックしたりなぞったりしてカーソルを移動する機能を搭載しています。フリック入力なら削除キーをフリックして文頭まで一括で削除する機能もついています。'
+            'フリックしたりなぞったりしてカーソルを移動する機能を搭載しています。フリック入力なら削除キーをフリックして文頭まで一括で削除する機能もついています。',
+          img: '/static/assets/sample_cursor_move.gif'
         },
         {
           header: 'フルアクセスに対応',
           contents:
-            'キーの振動フィードバック、クリップボードの履歴機能、ペーストボタンなど、フルアクセスを有効にすることでより便利な機能を利用することができます。もちろん、フルアクセスがオフでも全く問題なくご利用いただけます。'
+            'キーの振動フィードバック、クリップボードの履歴機能、ペーストボタンなど、フルアクセスを有効にすることでより便利な機能を利用することができます。もちろん、フルアクセスがオフでも全く問題なくご利用いただけます。',
+          img: '/static/assets/sample_full_access.jpeg'
         },
         {
-          header: '入力スタイルの柔軟性',
-          contents: `<ul>
-            <li>ローマ字入力でもフリック入力でも「大文字に固定」機能を搭載しています。</li>
-            <li>「英語はローマ字で日本語はフリック」のような設定にもしっかり対応しています。</li>
-          </ul>`
+          header: '片手モード',
+          contents: `片手モードに対応しています。縦持ちと横持ち、ローマ字入力とフリック入力でそれぞれ設定できるので、細かいカスタマイズが可能です。`,
+          img: '/static/assets/sample_one_hand_mode.jpeg'
         },
         {
-          header: '多彩なカスタマイズ',
-          contents: `<ul>
-            <li>キーや変換候補の文字サイズは自由に設定できます。</li>
-            <li>片手モードに対応しています。縦持ちと横持ち、ローマ字入力とフリック入力でそれぞれ設定できるので、細かいカスタマイズが可能です。</li>
-          </ul>`
-        },
-        {
-          header: '豊富な文字変換',
+          header: '🔁 豊富な文字変換',
           contents: `<ul>
             <li>絵文字と顔文字の変換はそれぞれ自由にON/OFF可能です。</li>
             <li>全角数字「１２３」や上付き文字・下付き文字の「¹²³₄₅₆」にも変換できます。数式や化学式も簡単に書けます。</li>
@@ -149,29 +156,29 @@ export default defineComponent({
           </ul>`
         },
         {
-          header: '使い方',
+          header: '🚀 使い方',
           contents: `<p>1. azooKeyを<a href="https://apps.apple.com/us/app/azookey/id1542709230">ダウンロード</a></p>
                     <p>2. アプリを開くと表示される手順に従ってazooKeyを有効化・お好みの設定に変更</p>
                      <p>3. キーボードを開いたら地球儀マークを長押ししてazooKeyを選択</p>
         `
         },
         {
-          header: 'OS',
+          header: '✅ 最新のOSに対応',
           contents:
-            'azooKeyはバージョン15.0以上のiOSに対応しています。最新のOSでの利用を常に推奨します。'
+            'azooKeyはバージョン16.0以上のiOSに対応しています。最新のOSでの利用を常に推奨します。'
         },
         {
-          header: '価格',
+          header: '🆓 価格',
           contents:
             'アプリ本体・キーボードの利用・ともに無料です。現在課金が必要な機能は一切提供していません。'
         },
         {
-          header: '個人情報について',
+          header: '🔒 個人情報について',
           contents:
-            'azooKeyはユーザが入力した内容やその他の個人情報を一切収集しません。フルアクセスは一部機能を実現するためにのみ利用され、ユーザの許可なく外部に情報を送信することは絶対にありません。詳しくは<router-link to="/PrivacyPolicy">プライバシーポリシー</router-link>をお読みください。'
+            'azooKeyはユーザが入力した内容やその他の個人情報を一切収集しません。フルアクセスは一部機能を実現するためにのみ利用され、ユーザの許可なく外部に情報を送信することは絶対にありません。詳しくは<a href="/PrivacyPolicy">プライバシーポリシー</a>をお読みください。'
         },
         {
-          header: 'このアプリについて',
+          header: 'ℹ️ このアプリについて',
           contents:
             'azooKeyはオープンソースソフトウェアとして開発されており、誰でもソースコードを閲覧し、利用し、配布することができます。<a href="https://github.com/ensan-hcl/azooKey">GitHub</a>で公開しています。'
         }
@@ -244,6 +251,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 32px;
 }
 
 .icon {
@@ -260,21 +268,6 @@ body {
     0 10.1px 11.4px rgba(0, 0, 0, 0.086),
     0 19.2px 19.8px rgba(0, 0, 0, 0.092),
     0 38.4px 34.8px rgba(0, 0, 0, 0.1);
-}
-
-.screenshot {
-  width: 24vw;
-  height: 26.4vw;
-  object-fit: cover;
-  object-position: 0 100%;
-}
-
-.features {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  text-align: center;
-  gap: 1.5vw;
 }
 
 h1 {
@@ -328,15 +321,23 @@ a {
     0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
-.screenshot {
-  border-radius: 8px;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.04),
-    0 4px 8px rgba(0, 0, 0, 0.08);
-}
-
 .hero-header {
   position: relative !important;   /* cancel sticky/fixed */
   top: auto !important;
+}
+
+/* Optional image inside intro-card */
+.intro-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 12px;
+  object-fit: cover;
+}
+
+@media (min-width: 1120px) {
+  .intro-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 </style>
