@@ -4,13 +4,15 @@ on:
   push:
     branches: [main]
 
+# GITHUB_TOKEN の権限
 permissions:
   contents: read
   pages: write
   id-token: write
+  # ※ artifacts API を直接呼ぶ場合は actions: write も付ける
 
 concurrency:
-  group: 'pages'
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -18,17 +20,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+
       - uses: oven-sh/setup-bun@v1
         with:
-          bun-version: 'latest'
+          bun-version: latest
+
       - run: bun install --frozen-lockfile
       - run: bun run build
-      - uses: actions/upload-pages-artifact@v2
+
+      # Pages 用設定（必須ではないが推奨）
+      - uses: actions/configure-pages@v5
+
+      # v3 は upload-artifact@v4 を内部使用
+      - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./dist      # ビルド成果物のディレクトリ
 
   deploy:
     needs: build
@@ -38,5 +48,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
-
+        uses: actions/deploy-pages@v4
