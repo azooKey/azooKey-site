@@ -85,7 +85,7 @@ import PageArticle from '../components/PageArticle.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = '利用規約'
-const image = 'https://azookey.netlify.app/static/og-image.png'
+const image = 'https://azookey.com/static/og-image.png'
 const title = '利用規約 | azooKey - 自由自在なキーボードアプリ'
 
 useHead({
