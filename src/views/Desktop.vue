@@ -89,7 +89,7 @@
       </div>
     </section>
 
-    <TheFooter />
+    <AppFooter />
   </div>
   
 </template>
@@ -97,8 +97,8 @@
 <script setup lang="ts">
 import { useHead, useSeoMeta } from '@unhead/vue'
 import GitHubButton from 'vue-github-button'
-import MiniHeader from '../components/MiniHeader.vue'
-import TheFooter from '../components/TheFooter.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
 
 defineOptions({ name: 'DesktopPage' })
 

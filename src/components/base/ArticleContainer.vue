@@ -6,7 +6,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'PageHeader'
+  name: 'ArticleContainer'
 })
 </script>
 
@@ -22,3 +22,4 @@ article {
   padding-bottom: 12px;
 }
 </style>
+

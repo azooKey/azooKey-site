@@ -1,10 +1,10 @@
 <template>
   <div>
     <div ref="hero" class="hero-header">
-      <ArticleHeader1>お問い合わせ</ArticleHeader1>
+      <SectionTitle>お問い合わせ</SectionTitle>
     </div>
     <MiniHeader :visible="true" />
-    <PageArticle>
+    <ArticleContainer>
       <p>以下よりお問い合わせの種類を選び、フォームへのご記入をお願いいたします。</p>
       <p>「質問・連絡・その他」をお選びいただく場合、返信可能なメールアドレスをご用意ください。</p>
       <div v-for="link in links" :key="link.title">
@@ -14,19 +14,18 @@
         </p>
         <p>{{ link.description }}</p>
       </div>
-    </PageArticle>
-    <TheFooter></TheFooter>
+    </ArticleContainer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import TheFooter from '../components/TheFooter.vue'
-import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import ArticleHeaderLogo from '../components/ArticleHeaderLogo.vue'
-import PageArticle from '../components/PageArticle.vue'
-import MiniHeader from '../components/MiniHeader.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import SectionTitle from '../components/typography/SectionTitle.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'azooKeyに関するお問い合わせをお寄せください。'
@@ -54,11 +53,9 @@ export default defineComponent({
   name: 'Contact',
 
   components: {
-    TheFooter,
-    ArticleHeader1,
-    // eslint-disable-next-line vue/no-unused-components
-    ArticleHeaderLogo,
-    PageArticle,
+    AppFooter,
+    SectionTitle,
+    ArticleContainer,
     MiniHeader
   },
 

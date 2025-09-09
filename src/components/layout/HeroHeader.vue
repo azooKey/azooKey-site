@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import AppStoreLink from './AppStoreLink.vue'
+import AppStoreLink from '../ui/AppStoreLink.vue'
 </script>
 
 <style>

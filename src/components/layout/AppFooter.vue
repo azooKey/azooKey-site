@@ -13,12 +13,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-
-import AppIcon from './AppIcon.vue'
-import AppStoreLink from './AppStoreLink.vue'
+import { navLinks } from '../../constants/navLinks'
+import AppIcon from '../ui/AppIcon.vue'
+import AppStoreLink from '../ui/AppStoreLink.vue'
 
 export default defineComponent({
-  name: 'TheFooter',
+  name: 'AppFooter',
 
   components: {
     AppIcon,
@@ -27,36 +27,7 @@ export default defineComponent({
 
   data() {
     return {
-      links: [
-      {
-          name: 'オープンソース',
-          destination: '/OpenSource'
-        },
-        {
-          name: 'macOS版',
-          destination: '/macOS'
-        },
-        {
-          name: 'カスタムタブ',
-          destination: '/CustomTabs'
-        },
-        {
-          name: '利用規約',
-          destination: '/TermsOfService'
-        },
-        {
-          name: 'プライバシーポリシー',
-          destination: '/PrivacyPolicy'
-        },
-        {
-          name: 'Q&A',
-          destination: '/QA'
-        },
-        {
-          name: 'お問い合わせ',
-          destination: '/Contact'
-        }
-      ]
+      links: navLinks
     }
   }
 })

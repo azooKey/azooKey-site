@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader ref="hero" class="hero-header">
+    <HeroHeader ref="hero" class="hero-header">
       <!-- App Icon and Typo -->
       <div class="icon-container">
         <img src="/static/assets/azooKeyLogo.png" class="icon" />
@@ -12,10 +12,10 @@
         <span class="text">自由自在な<wbr />キーボード<wbr />アプリ</span>
       </h1>
       <AppStoreLink></AppStoreLink>
-    </PageHeader>
+    </HeroHeader>
     <MiniHeader :visible="miniVisible" />
     <!-- Article Section with Introductions -->
-    <PageArticle>
+    <ArticleContainer>
       <div class="intro-grid">
         <div v-for="item in introductions" :key="item.header" class="intro-card">
           <!-- Optional image -->
@@ -30,21 +30,21 @@
           <p v-html="item.contents"></p>
         </div>
       </div>
-    </PageArticle>
+    </ArticleContainer>
 
     <!-- Footer Component -->
-    <TheFooter></TheFooter>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import TheFooter from '../components/TheFooter.vue'
-import AppStoreLink from '../components/AppStoreLink.vue'
-import PageHeader from '../components/PageHeader.vue'
-import PageArticle from '../components/PageArticle.vue'
-import MiniHeader from '../components/MiniHeader.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import AppStoreLink from '../components/ui/AppStoreLink.vue'
+import HeroHeader from '../components/layout/HeroHeader.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const title = 'azooKey - 自由自在なキーボードアプリ'
@@ -74,10 +74,10 @@ export default defineComponent({
   name: 'Main',
 
   components: {
-    TheFooter,
+    AppFooter,
     AppStoreLink,
-    PageHeader,
-    PageArticle,
+    HeroHeader,
+    ArticleContainer,
     MiniHeader
   },
 
@@ -120,19 +120,32 @@ export default defineComponent({
         {
           header: '候補の拡大表示',
           contents:
-            'azooKeyは入力中に漢字を拡大表示出来るので、一瞬で字の構造が分かります。難しい漢字を手書きするため画像検索する必要はもうありません。',
-            img: '/static/assets/sample_candidate_enlarge.jpeg'
+            'azooKeyは入力中に漢字を読みや文脈から予測し、ピッタリの候補を提示します。候補をタップすると拡大表示され、長い候補も迷わず選べます。'
         },
         {
-          header: 'おしゃれなフォント',
+          header: '英語入力',
           contents:
-            'おしゃれフォントでの入力も対応。かわいい英数字が簡単に入力できます。チャットもプロフィールもハッシュタグも綺麗なフォントで彩りましょう！',
-            img: '/static/assets/sample_typography_input.jpeg'
+            '日本語入力と英語入力の両方に対応。キーボード切り替えなしで英単語をスムーズに入力できます。'
         },
         {
-          header: 'ユーザ辞書機能',
+          header: 'ユーザ辞書',
           contents:
-            '高機能なユーザ辞書機能を搭載。固有名詞など好きな単語を登録できるほか、日付の入力やランダムな変換も設定可能です。端末のユーザ辞書とも連携します。',
+            'ユーザ辞書は、ユーザの入力頻度に応じて単語の学習や提案が行われるほか、日付の入力や独自の略語展開にも利用できます。'
+        },
+        {
+          header: 'ランチャー機能',
+          contents:
+            'クリップボード履歴の貼り付け、よく使う文章の定型文挿入などをランチャーから素早く呼び出せます。'
+        },
+        {
+          header: '辞書の拡張',
+          contents:
+            '専門用語や固有名詞など、あなたにとって必要な語彙を追加して、より効率よく入力できます。'
+        },
+        {
+          header: 'ユーザ辞書',
+          contents:
+            '機能を搭載。固有名詞など好きな単語を登録できるほか、日付の入力やランダムな変換も設定可能です。端末のユーザ辞書とも連携します。',
           img: '/static/assets/sample_user_dictionary.jpeg'
         },
         {

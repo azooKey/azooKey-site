@@ -6,7 +6,7 @@
     </div>
     <MiniHeader :visible="true" />
 
-    <PageArticle>
+    <ArticleContainer>
       <h2>カスタムタブ機能について</h2>
       <div v-for="item in introductions" :key="item.header">
         <h3>{{ item.header }}</h3>
@@ -49,17 +49,17 @@
           </p>
         </div>
       </div>
-    </PageArticle>
-    <TheFooter />
+    </ArticleContainer>
+    <AppFooter />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useClipboard } from '@vueuse/core'
-import TheFooter from '../components/TheFooter.vue'
-import MiniHeader from '../components/MiniHeader.vue'
-import PageArticle from '../components/PageArticle.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'カスタムタブ機能'
