@@ -1,13 +1,13 @@
 <template>
   <div>
     <div ref="hero" class="hero-header">
-      <ArticleHeader1>
+      <SectionTitle>
         <span class="text">オープン</span><span class="text">ソース</span>
-      </ArticleHeader1>
+      </SectionTitle>
     </div>
     <MiniHeader :visible="true" />
 
-    <PageArticle>
+    <ArticleContainer>
       <p>azooKeyや関連ソフトウェアをオープンソースで公開しています。</p>
       <h2>azooKey app</h2>
       <p>
@@ -115,19 +115,19 @@
       <p>
         また、アプリケーション、変換エンジン、サイトの改善などにご協力いただければ、大変嬉しいです。
       </p>
-    </PageArticle>
-    <TheFooter></TheFooter>
+    </ArticleContainer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
-import TheFooter from '../components/TheFooter.vue'
-import PageArticle from '../components/PageArticle.vue'
-import ArticleHeader1 from '../components/ArticleHeader1.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
+import SectionTitle from '../components/typography/SectionTitle.vue'
 import { defineComponent } from 'vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 import GitHubButton from 'vue-github-button'
-import MiniHeader from '../components/MiniHeader.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
 
 const description =
   'iOS・iPadOS対応のキーボードアプリazooKeyはGitHubでオープンソースで開発・公開しています'
@@ -153,9 +153,9 @@ useSeoMeta({
 export default defineComponent({
   name: 'OpenSource',
   components: {
-    TheFooter,
-    ArticleHeader1,
-    PageArticle,
+    AppFooter,
+    SectionTitle,
+    ArticleContainer,
     GitHubButton,
     MiniHeader
   }

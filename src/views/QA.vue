@@ -1,10 +1,10 @@
 <template>
   <div>
     <div ref="hero" class="hero-header">
-      <ArticleHeader1>Q&A</ArticleHeader1>
+      <SectionTitle>Q&A</SectionTitle>
     </div>
     <MiniHeader :visible="true" />
-    <PageArticle>
+    <ArticleContainer>
       <p>
         このQ&Aで解決しない場合、<router-link to="./Contact">お問い合わせ</router-link>ください。
       </p>
@@ -12,18 +12,18 @@
         <h2>{{ qa.question }}</h2>
         <p v-html="qa.answer"></p>
       </div>
-    </PageArticle>
-    <TheFooter></TheFooter>
+    </ArticleContainer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import TheFooter from '../components/TheFooter.vue'
-import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import MiniHeader from '../components/MiniHeader.vue'
-import PageArticle from '../components/PageArticle.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import SectionTitle from '../components/typography/SectionTitle.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'azooKeyに関するQ&Aをまとめています。'
@@ -50,9 +50,9 @@ export default defineComponent({
   name: 'QA',
 
   components: {
-    TheFooter,
-    ArticleHeader1,
-    PageArticle,
+    AppFooter,
+    SectionTitle,
+    ArticleContainer,
     MiniHeader
   },
 

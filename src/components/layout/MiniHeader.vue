@@ -1,5 +1,3 @@
-
-
 <template>
   <!-- v-show でまるごと表示制御 -->
   <header class="mini-header" v-show="visible">
@@ -34,18 +32,9 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
+import { navLinks as links } from '../../constants/navLinks'
+
 const { visible } = defineProps<{ visible: boolean }>()
-
-const links = [
-  { name: 'オープンソース', destination: '/OpenSource' },
-  { name: 'macOS版', destination: '/macOS' },
-  { name: 'カスタムタブ', destination: '/CustomTabs' },
-  { name: '利用規約', destination: '/TermsOfService' },
-  { name: 'プライバシーポリシー', destination: '/PrivacyPolicy' },
-  { name: 'Q&A', destination: '/QA' },
-  { name: 'お問い合わせ', destination: '/Contact' }
-]
-
 const drawerOpen = ref(false)
 </script>
 

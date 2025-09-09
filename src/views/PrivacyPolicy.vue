@@ -1,12 +1,12 @@
 <template>
   <div>
     <div ref="hero" class="hero-header">
-      <ArticleHeader1
-        ><span class="text">プライバシー</span><span class="text">ポリシー</span></ArticleHeader1
+      <SectionTitle
+        ><span class="text">プライバシー</span><span class="text">ポリシー</span></SectionTitle
       >
     </div>
     <MiniHeader :visible="true" />
-    <PageArticle>
+    <ArticleContainer>
       <h2>1.個人情報の定義</h2>
       <p>
         本プライバシーポリシーにおいて、個人情報とは、個人情報保護法第2条第1項により定義された個人情報を意味します。また入力履歴とは利用者がazooKeyを利用する上でキーボードを介して行う入力操作の履歴を指します。
@@ -33,18 +33,18 @@
         ※ご不明な点があれば、<router-link to="./Contact">お問い合わせ</router-link
         >よりお気軽にお問い合わせください。
       </p>
-    </PageArticle>
-    <TheFooter></TheFooter>
+    </ArticleContainer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import TheFooter from '../components/TheFooter.vue'
-import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import MiniHeader from '../components/MiniHeader.vue'
-import PageArticle from '../components/PageArticle.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import SectionTitle from '../components/typography/SectionTitle.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = 'プライバシーポリシー'
@@ -71,9 +71,9 @@ export default defineComponent({
   name: 'PrivacyPolicy',
 
   components: {
-    TheFooter,
-    ArticleHeader1,
-    PageArticle,
+    AppFooter,
+    SectionTitle,
+    ArticleContainer,
     MiniHeader
   }
 })

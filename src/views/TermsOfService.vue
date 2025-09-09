@@ -1,10 +1,10 @@
 <template>
   <div>
     <div ref="hero" class="hero-header">
-      <ArticleHeader1>利用規約</ArticleHeader1>
+      <SectionTitle>利用規約</SectionTitle>
     </div>
     <MiniHeader :visible="true" />
-    <PageArticle>
+    <ArticleContainer>
       <h2>1.本規約について</h2>
       <h3>1.1.適用</h3>
       <p>
@@ -70,18 +70,18 @@
       <h2>5.改訂履歴</h2>
       <p>2025年5月31日：改訂</p>
       <p>2020年12月4日：公開</p>
-    </PageArticle>
-    <TheFooter></TheFooter>
+    </ArticleContainer>
+    <AppFooter></AppFooter>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 
-import TheFooter from '../components/TheFooter.vue'
-import ArticleHeader1 from '../components/ArticleHeader1.vue'
-import MiniHeader from '../components/MiniHeader.vue'
-import PageArticle from '../components/PageArticle.vue'
+import AppFooter from '../components/layout/AppFooter.vue'
+import SectionTitle from '../components/typography/SectionTitle.vue'
+import MiniHeader from '../components/layout/MiniHeader.vue'
+import ArticleContainer from '../components/base/ArticleContainer.vue'
 import { useHead, useSeoMeta } from '@unhead/vue'
 
 const description = '利用規約'
@@ -108,9 +108,9 @@ export default defineComponent({
   name: 'TermsOfService',
 
   components: {
-    TheFooter,
-    ArticleHeader1,
-    PageArticle,
+    AppFooter,
+    SectionTitle,
+    ArticleContainer,
     MiniHeader
   }
 })
