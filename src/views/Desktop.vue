@@ -20,7 +20,7 @@
 
         <div class="download-section">
           <a
-            href="https://github.com/azooKey/azooKey-Desktop/releases/download/v0.1.1/azooKey-release-signed.pkg"
+            href="https://github.com/azooKey/azooKey-Desktop/releases/latest/download/azooKey-release-signed.pkg"
             class="download-btn"
             target="_blank"
             rel="noopener noreferrer"
