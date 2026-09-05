@@ -106,7 +106,7 @@ export default defineComponent({
         {
           question: 'azooKeyの開発に参加したいです',
           answer:
-            '開発に参加してくださる方がいれば大変助かります。まずは<a href="https://github.com/ensan-hcl/azooKey/blob/develop/docs/first_contribution.md">GitHubのドキュメント</a>などをご覧ください。'
+            '開発に参加してくださる方がいれば大変助かります。まずは<a href="https://github.com/azooKey/azooKey/blob/main/docs/CONTRIBUTING.md">GitHubのドキュメント</a>などをご覧ください。'
         },
         {
           question: 'azooKeyを支援したいです',
