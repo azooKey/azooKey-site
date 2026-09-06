@@ -12,15 +12,15 @@
       <h2>azooKey app</h2>
       <p>
         <GitHubButton
-          href="https://github.com/ensan-hcl/azooKey"
+          href="https://github.com/azooKey/azooKey"
           data-icon="octicon-star"
-          aria-label="Star ensan-hcl/azooKey on GitHub"
+          aria-label="Star azooKey/azooKey on GitHub"
           >Star</GitHubButton
         >
         <GitHubButton
-          href="https://github.com/ensan-hcl/azooKey/fork"
+          href="https://github.com/azooKey/azooKey/fork"
           data-icon="octicon-repo-forked"
-          aria-label="Fork ensan-hcl/azooKey on GitHub"
+          aria-label="Fork azooKey/azooKey on GitHub"
           >Fork</GitHubButton
         >
         <GitHubButton
@@ -37,15 +37,15 @@
       <h2>AzooKeyKanaKanjiConverter</h2>
       <p>
         <GitHubButton
-          href="https://github.com/ensan-hcl/AzooKeyKanaKanjiConverter"
+          href="https://github.com/azooKey/AzooKeyKanaKanjiConverter"
           data-icon="octicon-star"
-          aria-label="Star ensan-hcl/AzooKeyKanaKanjiConverter on GitHub"
+          aria-label="Star azooKey/AzooKeyKanaKanjiConverter on GitHub"
           >Star</GitHubButton
         >
         <GitHubButton
-          href="https://github.com/ensan-hcl/AzooKeyKanaKanjiConverter/fork"
+          href="https://github.com/azooKey/AzooKeyKanaKanjiConverter/fork"
           data-icon="octicon-repo-forked"
-          aria-label="Fork ensan-hcl/AzooKeyKanaKanjiConverter on
+          aria-label="Fork azooKey/AzooKeyKanaKanjiConverter on
           GitHub"
           >Fork</GitHubButton
         >
@@ -64,15 +64,15 @@
       <h2>CustardKit</h2>
       <p>
         <GitHubButton
-          href="https://github.com/ensan-hcl/CustardKit"
+          href="https://github.com/azooKey/CustardKit"
           data-icon="octicon-star"
-          aria-label="Star ensan-hcl/CustardKit on GitHub"
+          aria-label="Star azooKey/CustardKit on GitHub"
           >Star</GitHubButton
         >
         <GitHubButton
-          href="https://github.com/ensan-hcl/CustardKit/fork"
+          href="https://github.com/azooKey/CustardKit/fork"
           data-icon="octicon-repo-forked"
-          aria-label="Fork ensan-hcl/CustardKit on GitHub"
+          aria-label="Fork azooKey/CustardKit on GitHub"
           >Fork</GitHubButton
         >
       </p>
@@ -83,15 +83,15 @@
       <h2>azooKey official site</h2>
       <p>
         <GitHubButton
-          href="https://github.com/ensan-hcl/azooKey-site"
+          href="https://github.com/azooKey/azooKey-site"
           data-icon="octicon-star"
-          aria-label="Star ensan-hcl/azooKey-site on GitHub"
+          aria-label="Star azooKey/azooKey-site on GitHub"
           >Star</GitHubButton
         >
         <GitHubButton
-          href="https://github.com/ensan-hcl/AzooKeyKanaKanjiConverter/issues"
+          href="https://github.com/azooKey/AzooKeyKanaKanjiConverter/issues"
           data-icon="octicon-issue-opened"
-          aria-label="Issue ensan-hcl/AzooKeyKanaKanjiConverter on GitHub"
+          aria-label="Issue azooKey/AzooKeyKanaKanjiConverter on GitHub"
           >Issue</GitHubButton
         >
       </p>

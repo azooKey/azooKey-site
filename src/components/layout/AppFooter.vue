@@ -1,7 +1,7 @@
 <template>
   <footer class="footer_box">
     <div class="footer_links">
-      <a href="https://github.com/ensan-hcl/azooKey" class="link">azooKey on GitHub</a>
+      <a href="https://github.com/azooKey/azooKey" class="link">azooKey on GitHub</a>
       <router-link v-for="link in links" :key="link.name" :to="link.destination" class="link">
         {{ link.name }}
       </router-link>

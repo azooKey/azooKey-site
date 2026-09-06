@@ -14,7 +14,7 @@
       <button class="drawer-close" @click="drawerOpen = false">×</button>
 
       <a
-        href="https://github.com/ensan-hcl/azooKey"
+        href="https://github.com/azooKey/azooKey"
         target="_blank" rel="noopener"
         class="drawer-link"
         @click="drawerOpen = false"

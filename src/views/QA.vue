@@ -71,7 +71,7 @@ export default defineComponent({
         {
           question: 'azooKeyはオープンソースソフトウェアですか？',
           answer:
-            'その通りです。<a href="https://github.com/ensan-hcl/azooKey">GitHub</a>でソースコードを公開し、オープンな開発を行っています。'
+            'その通りです。<a href="https://github.com/azooKey/azooKey">GitHub</a>でソースコードを公開し、オープンな開発を行っています。'
         },
         {
           question: 'azooKeyを作っているのは誰ですか？',
@@ -91,7 +91,7 @@ export default defineComponent({
         {
           question: 'azooKeyの変換エンジンはなんですか？',
           answer:
-            'azooKeyはSwiftで実装された<a href="https://github.com/ensan-hcl/AzooKeyKanaKanjiConverter">独自開発の変換エンジン</a>を利用しています。Mozcは利用していませんが、アルゴリズムは強く参考にしています。'
+            'azooKeyはSwiftで実装された<a href="https://github.com/azooKey/AzooKeyKanaKanjiConverter">独自開発の変換エンジン</a>を利用しています。Mozcは利用していませんが、アルゴリズムは強く参考にしています。'
         },
         {
           question: 'azooKeyにAndroid版はありますか？',
@@ -106,7 +106,7 @@ export default defineComponent({
         {
           question: 'azooKeyの開発に参加したいです',
           answer:
-            '開発に参加してくださる方がいれば大変助かります。まずは<a href="https://github.com/ensan-hcl/azooKey/blob/develop/docs/first_contribution.md">GitHubのドキュメント</a>などをご覧ください。'
+            '開発に参加してくださる方がいれば大変助かります。まずは<a href="https://github.com/azooKey/azooKey/blob/main/docs/CONTRIBUTING.md">GitHubのドキュメント</a>などをご覧ください。'
         },
         {
           question: 'azooKeyを支援したいです',

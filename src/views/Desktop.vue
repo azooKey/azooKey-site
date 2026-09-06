@@ -30,7 +30,7 @@
             <span class="download-format">.pkg</span>
           </a>
           <a
-            href="https://github.com/ensan-hcl/azooKey-Desktop/releases"
+            href="https://github.com/azooKey/azooKey-Desktop/releases"
             class="releases-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -78,9 +78,9 @@
           </p>
           <div class="github-star-wrapper">
             <GitHubButton
-              href="https://github.com/ensan-hcl/azooKey-Desktop"
+              href="https://github.com/azooKey/azooKey-Desktop"
               data-icon="octicon-star"
-              aria-label="Star ensan-hcl/azooKey-Desktop on GitHub"
+              aria-label="Star azooKey/azooKey-Desktop on GitHub"
             >
               Star on GitHub
             </GitHubButton>

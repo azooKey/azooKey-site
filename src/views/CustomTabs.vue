@@ -95,7 +95,7 @@ const introductions = ref([
   },
   {
     header: '作り方',
-    contents: `azooKeyアプリ内ではフリック式・スクロール式のカスタムタブを作ることができます。さらに高度なカスタムタブを作るには<a href="https://github.com/ensan-hcl/CustardKit">CustardKit</a>が便利です。`
+    contents: `azooKeyアプリ内ではフリック式・スクロール式のカスタムタブを作ることができます。さらに高度なカスタムタブを作るには<a href="https://github.com/azooKey/CustardKit">CustardKit</a>が便利です。`
   }
 ])
 

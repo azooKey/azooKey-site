@@ -198,7 +198,7 @@ export default defineComponent({
         {
           header: 'ℹ️ このアプリについて',
           contents:
-            'azooKeyはオープンソースソフトウェアとして開発されており、誰でもソースコードを閲覧し、利用し、配布することができます。<a href="https://github.com/ensan-hcl/azooKey">GitHub</a>で公開しています。'
+            'azooKeyはオープンソースソフトウェアとして開発されており、誰でもソースコードを閲覧し、利用し、配布することができます。<a href="https://github.com/azooKey/azooKey">GitHub</a>で公開しています。'
         }
       ]
     }
