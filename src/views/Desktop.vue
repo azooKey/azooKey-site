@@ -107,7 +107,7 @@ const description =
   'iOS向けキーボードアプリ「azooKey」のmacOS版は、ニューラルかな漢字変換エンジンを搭載した本格派日本語入力です。'
 const image = 'https://azookey.com/static/og-image.png'
 
-useHead({ title })
+useHead({ title: 'macOS版 |' })
 
 useSeoMeta({
   ogTitle: () => title,

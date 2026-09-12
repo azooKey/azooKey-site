@@ -134,22 +134,6 @@ const description =
 const image = 'https://azookey.com/static/og-image.png'
 const title = 'オープンソース | azooKey - 自由自在なキーボードアプリ'
 
-useHead({
-  title: () => 'オープンソース |'
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   name: 'OpenSource',
   components: {
@@ -158,6 +142,23 @@ export default defineComponent({
     ArticleContainer,
     GitHubButton,
     MiniHeader
+  },
+  setup() {
+    useHead({
+      title: () => 'オープンソース |'
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   }
 })
 </script>

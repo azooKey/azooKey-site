@@ -32,22 +32,6 @@ const description = 'azooKeyに関するお問い合わせをお寄せくださ�
 const image = 'https://azookey.com/static/og-image.png'
 const title = 'お問い合わせ | azooKey - 自由自在なキーボードアプリ'
 
-useHead({
-  title: () => 'お問い合わせ |'
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Contact',
@@ -57,6 +41,24 @@ export default defineComponent({
     SectionTitle,
     ArticleContainer,
     MiniHeader
+  },
+
+  setup() {
+    useHead({
+      title: () => 'お問い合わせ |'
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   },
 
   data() {

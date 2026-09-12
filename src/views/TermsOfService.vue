@@ -88,22 +88,6 @@ const description = '利用規約'
 const image = 'https://azookey.com/static/og-image.png'
 const title = '利用規約 | azooKey - 自由自在なキーボードアプリ'
 
-useHead({
-  title: '利用規約 |'
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   name: 'TermsOfService',
 
@@ -112,6 +96,24 @@ export default defineComponent({
     SectionTitle,
     ArticleContainer,
     MiniHeader
+  },
+
+  setup() {
+    useHead({
+      title: '利用規約 |'
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   }
 })
 </script>

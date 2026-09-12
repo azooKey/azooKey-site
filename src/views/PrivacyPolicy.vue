@@ -51,22 +51,6 @@ const description = 'プライバシーポリシー'
 const image = 'https://azookey.com/static/og-image.png'
 const title = 'プライバシーポリシー | azooKey - 自由自在なキーボードアプリ'
 
-useHead({
-  title: () => 'プライバシーポリシー |'
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   name: 'PrivacyPolicy',
 
@@ -75,6 +59,24 @@ export default defineComponent({
     SectionTitle,
     ArticleContainer,
     MiniHeader
+  },
+
+  setup() {
+    useHead({
+      title: () => 'プライバシーポリシー |'
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   }
 })
 </script>

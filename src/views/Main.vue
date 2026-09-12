@@ -52,23 +52,6 @@ const description =
   'azooKeyは強力なカスタマイズ機能を搭載した日本語入力キーボードです。最先端の高精度変換システム「Zenzai」を搭載し、完全オフラインで動作します。ライブ変換、着せ替え、ユーザ辞書など、快適な入力のための機能もしっかりサポートしています。普段使う日本語タブをカスタマイズするカスタムキー機能とオリジナルの配列のキーボードを作るカスタムタブ機能でどこまでも自由にカスタマイズができます。'
 const image = 'https://azookey.com/static/og-image.png'
 
-useHead({
-  title: 'azooKey - 自由自在なキーボードアプリ',
-  titleTemplate: ''
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names, vue/no-reserved-component-names
   name: 'Main',
@@ -79,6 +62,25 @@ export default defineComponent({
     HeroHeader,
     ArticleContainer,
     MiniHeader
+  },
+
+  setup() {
+    useHead({
+      title: 'azooKey - 自由自在なキーボードアプリ',
+      titleTemplate: ''
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   },
 
   data() {

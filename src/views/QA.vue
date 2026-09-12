@@ -30,22 +30,6 @@ const description = 'azooKeyに関するQ&Aをまとめています。'
 const image = 'https://azookey.com/static/og-image.png'
 const title = 'Q&A | azooKey - 自由自在なキーボードアプリ'
 
-useHead({
-  title: () => 'Q&A |'
-})
-
-useSeoMeta({
-  ogTitle: () => title,
-  twitterTitle: () => title,
-
-  description: () => description,
-  ogDescription: () => description,
-  twitterDescription: () => description,
-
-  ogImage: () => image,
-  twitterImage: () => image
-})
-
 export default defineComponent({
   name: 'QA',
 
@@ -54,6 +38,24 @@ export default defineComponent({
     SectionTitle,
     ArticleContainer,
     MiniHeader
+  },
+
+  setup() {
+    useHead({
+      title: () => 'Q&A |'
+    })
+
+    useSeoMeta({
+      ogTitle: () => title,
+      twitterTitle: () => title,
+
+      description: () => description,
+      ogDescription: () => description,
+      twitterDescription: () => description,
+
+      ogImage: () => image,
+      twitterImage: () => image
+    })
   },
 
   data() {
